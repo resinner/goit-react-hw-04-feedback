@@ -11,7 +11,7 @@ class App extends Component {
     bad: 0,
   };
 
-  // Метод, котрий бере назву кнопки та прибавляє 1 в стейт
+  // Метод, котрий бере назву кнопки та прибавляє 1 в стейтb
   onLeaveFeedback = event => {
     const label = event.target.textContent;
 
