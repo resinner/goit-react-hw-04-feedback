@@ -9,17 +9,16 @@ import Notification from 'components/Notification';
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  // useEffect(() => {
-  //   setTotal = good + neutral + bad;
-  // },[good, neutral, bad])
+  const total = good + neutral + bad;
+  const positivePercentage = Math.round((good / total) * 100);
 
-  function total() {
-    return (total = good + neutral + bad);
-  }
+  // function total() {
+  //   return (total = good + neutral + bad);
+  // }
 
-  function positivePercentage() {
-    return (positivePercentage = Math.round((good / total) * 100));
-  }
+  // function positivePercentage() {
+  //   return (positivePercentage = Math.round((good / total) * 100));
+  // }
 
   // Метод, котрий бере назву кнопки та прибавляє 1 в стейт
   function onClickBtn(event) {
