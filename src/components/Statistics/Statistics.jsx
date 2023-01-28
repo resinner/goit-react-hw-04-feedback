@@ -3,8 +3,8 @@ import Notification from '../Notification';
 import styles from './Statistics.module.scss';
 
 export default function Statistics({ good, neutral, bad, total, positivePercentage }) {
-    const totalFeedback = total();
-    const positiveValue = positivePercentage();
+    const totalFeedback = total;
+    const positiveValue = positivePercentage;
 
   return (
     <div>
@@ -49,8 +49,8 @@ Statistics.propTypes = {
   good: PropTypes.number.isRequired,
   neutral: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
-  total: PropTypes.func.isRequired,
-  positivePercentage: PropTypes.func.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };
 
 
