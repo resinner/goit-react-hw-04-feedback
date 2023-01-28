@@ -4,32 +4,41 @@ import FeedbackOptions from './components/FeedbackOptions';
 import Statistics from './components/Statistics';
 import Notification from 'components/Notification';
 
-export default function App() {
+ export default function App() {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
+  // const [total, setTotal] = useState(0);
 
-    const total = good + neutral + bad;
-    const positivePercentage = Math.round((good / total) * 100);
+  // useEffect(() => {
+  //   setTotal = good + neutral + bad;
+  // },[good, neutral, bad])
+
+  function total() {
+    return (total = good + neutral + bad);
+  }
+
+  function positivePercentage() {
+    return (positivePercentage = Math.round((good / total) * 100));
+  }
 
   // Метод, котрий бере назву кнопки та прибавляє 1 в стейт
-    const onClickBtn = event => {
+  function onClickBtn(event) {
+    switch (event.target.name) {
+      case 'good':
+        setGood(good + 1);
+        break;
+      case 'neutral':
+        setNeutral(neutral + 1);
+        break;
+      case 'bad':
+        setBad(bad + 1);
+        break;
 
-      switch (event.target.name) {
-        case 'good':
-          setGood(good + 1);
-          break;
-        case 'neutral':
-          setNeutral(neutral + 1);
-          break;
-        case 'bad':
-          setBad(bad + 1);
-          break;
-
-        default:
-          break;
-      }
-    };
+      default:
+        break;
+    }
+  }
 
   return (
     <>
@@ -39,6 +48,7 @@ export default function App() {
           onLeaveFeedback={onClickBtn} // Метод для назви кнопок та інкремента
         />
       </Section>
+
       <Section title="Statistics">
         {total === 0 ? (
           <Notification message="There is no feedback" />
