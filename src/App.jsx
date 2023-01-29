@@ -12,15 +12,6 @@ import Notification from 'components/Notification';
   const total = good + neutral + bad;
   const positivePercentage = Math.round((good / total) * 100);
 
-  // function total() {
-  //   return (total = good + neutral + bad);
-  // }
-
-  // function positivePercentage() {
-  //   return (positivePercentage = Math.round((good / total) * 100));
-  // }
-
-  // Метод, котрий бере назву кнопки та прибавляє 1 в стейт
   function onClickBtn(event) {
     switch (event.target.name) {
       case 'good':
@@ -42,8 +33,8 @@ import Notification from 'components/Notification';
     <>
       <Section title="Please leave feedback">
         <FeedbackOptions
-          options={{ good, neutral, bad }} // Передаєм в компонент кнопок весь стейт
-          onLeaveFeedback={onClickBtn} // Метод для назви кнопок та інкремента
+          options={{ good, neutral, bad }} 
+          onLeaveFeedback={onClickBtn} 
         />
       </Section>
 
